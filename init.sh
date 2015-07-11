@@ -28,6 +28,7 @@ echo "Triggering the build (with ${TIMEOUT} timeout)..."
 timeout --signal=SIGKILL ${TIMEOUT} \
   docker run -v $SCRIPT_PATH:/source \
   -e "GIT_PROJECT_NAME=$GIT_PROJECT_NAME" \
+  --rm \
   $CONTAINER sh -c "/source/build.sh"
 
 echo "Running $GIT_PROJECT_NAME"
