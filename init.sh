@@ -22,9 +22,6 @@ rm -rf $GIT_PROJECT_NAME
 #apt-get install git && \
 git clone https://github.com/$GIT_USER/$GIT_PROJECT_NAME.git
 
-echo "SCRIPT " $SCRIPT
-echo "SCRIPT_PATH " $SCRIPT_PATH
-echo "SOURCE_PATH " $SOURCE_PATH
 #timeout for the build script, to avoid zombies in case of uncontrolled failure
 TIMEOUT=5m
 echo "Triggering the build (with ${TIMEOUT} timeout)..."
