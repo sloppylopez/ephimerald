@@ -14,7 +14,7 @@ Phoenix build process:
     2)cd phoenixserver
 
     3)sudo sh init.sh <GIT_USER> <GIT_PROJECT_NAME> <TARGET_EXEC> <DOCKER_CONTAINER_BASE_IMAGE>
-      example sudo sh init.sh sloppylopez nodeapi server.js phusion/baseimage:0.9.16
+      example: sudo sh init.sh sloppylopez nodeapi server.js phusion/baseimage:0.9.16
 
 
     INFO:init.sh will execute build.sh and when finished, init will execute run
