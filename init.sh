@@ -26,8 +26,7 @@ docker pull $CONTAINER
 rm -rf $GIT_PROJECT_NAME
 #TODO Uncomment me for non-local use
 #apt-get install git && \
-
-if [ "$REPO" == "git" ]
+if [ $REPO = "git" ]
 then
     git clone https://github.com/$GIT_USER/$GIT_PROJECT_NAME.git
 else

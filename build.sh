@@ -5,7 +5,7 @@ set -e
 SOURCE_PATH=/source/$GIT_PROJECT_NAME
 BUILD_PATH=$HOME/build
 DESTINATION=node_modules #in case of a java project this would be the war file
-ORIGINAL_NODE_VERSION=0.12
+ORIGINAL_NODE_VERSION=0.12 #we use this random version of node as starting point, then we will install derired version using n taking from param in command line
 
 echo "Recreating build directory $BUILD_PATH"
 rm -rf $BUILD_PATH && mkdir -p $BUILD_PATH

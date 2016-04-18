@@ -17,7 +17,9 @@ Ephimeral build process:
     2)cd phoenixserver
 
     3)usage: sudo sh init.sh <GIT_USER> <GIT_PROJECT_NAME> <TARGET_EXEC> <DOCKER_CONTAINER_BASE_IMAGE> <TIMEOUT_FOR_BUILD>
-      example: sudo sh init.sh sloppylopez nodeapi server.js phusion/baseimage:0.9.16 stash 0.12.2 30m
+      examples: 
+        sudo sh init.sh sloppylopez nodeapi server.js phusion/baseimage:0.9.16 stash 0.12.2 30m
+        sudo sh init.sh sloppylopez nodeapi server.js phusion/baseimage:0.9.16 git 0.12.2 30m
 
 
     INFO:init.sh will execute build.sh and when finished, init will execute run
