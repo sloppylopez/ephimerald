@@ -5,7 +5,7 @@ set -e
 if [ -z "$1" ] || [ -z "$2" ] || [ -z "$3" ] || [ -z "$4" ] || [ -z "$5" ] || [ -z "$6" ] || [ -z "$7" ]
 then
    echo "usage: sudo sh init.sh <GIT_USER> <GIT_PROJECT_NAME> <TARGET_EXEC> <DOCKER_CONTAINER_BASE_IMAGE> <TIMEOUT_FOR_BUILD>"
-   echo "example: sudo sh init.sh sloppylopez nodeapi server.js ubuntu:14.04 stash 0.12.2 30m"
+   echo "example: sudo sh init.sh sloppylopez nodeapi server.js ubuntu:14.04 git 0.12.2 30m"
    exit
 fi
 
