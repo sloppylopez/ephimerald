@@ -30,7 +30,7 @@ if [ $REPO = "git" ]
 then
     git clone https://github.com/$GIT_USER/$GIT_PROJECT_NAME.git
 else
-    git clone https://$GIT_USER@stash.eden.klm.com/scm/c3s/$GIT_PROJECT_NAME.git
+    git clone https://$GIT_USER@stash.com/$GIT_PROJECT_NAME.git
 fi
 
 #timeout for the build script, to avoid zombies in case of uncontrolled failure
@@ -40,7 +40,6 @@ timeout --signal=SIGKILL ${TIMEOUT} \
   docker run -v $SCRIPT_PATH:/source \
   -e "GIT_PROJECT_NAME=$GIT_PROJECT_NAME" \
   -e "NODE_VERSION=$NODE_VERSION" \
-  --rm \
   $CONTAINER sh -c "/source/build.sh"
 
 echo "Running $GIT_PROJECT_NAME"
