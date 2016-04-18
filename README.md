@@ -8,7 +8,7 @@ the final compiled project in your host machine folder ready to use.
 It's a Phoenix Idempotent ephimeral server for NodeJS Based projects.
 
 ## Where to use it
-On Linux based distributions, (for a Mac compatible version, PR's welcome)
+On Debian based distributions, (for a Mac compatible version, PR's welcome)
 
 Ephimeral build process:
 

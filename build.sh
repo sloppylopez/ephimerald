@@ -5,7 +5,8 @@ set -e
 SOURCE_PATH=/source/$GIT_PROJECT_NAME
 BUILD_PATH=$HOME/build
 DESTINATION=node_modules #in case of a java project this would be the war file
-ORIGINAL_NODE_VERSION=0.12 #we use this random version of node as starting point, then we will install desired version using n taking from param in command line
+INITIAL_NODE_VERSION=0.12
+echo "BUILD_PATH " $BUILD_PATH
 
 echo "Recreating build directory $BUILD_PATH"
 rm -rf $BUILD_PATH && mkdir -p $BUILD_PATH
@@ -18,7 +19,7 @@ echo "♠ Building... This may take several minutes"
 apt-get update -qq
 apt-get install -y -qq curl git python build-essential
 
-curl -sL https://deb.nodesource.com/setup_$ORIGINAL_NODE_VERSION | sudo bash -
+curl -sL https://deb.nodesource.com/setup_$INITIAL_NODE_VERSION | sudo bash -
 apt-get install -y nodejs
 
 npm install -g n

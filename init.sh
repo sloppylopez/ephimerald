@@ -4,8 +4,8 @@ set -e
 
 if [ -z "$1" ] || [ -z "$2" ] || [ -z "$3" ] || [ -z "$4" ] || [ -z "$5" ] || [ -z "$6" ] || [ -z "$7" ]
 then
-   echo "usage: sudo sh init.sh <GIT_USER> <GIT_PROJECT_NAME> <TARGET_EXEC> <DOCKER_CONTAINER_BASE_IMAGE> <TIMEOUT_FOR_BUILD>"
-   echo "example: sudo sh init.sh sloppylopez nodeapi server.js ubuntu:14.04 git 0.12.2 30m"
+   echo "usage: sh init.sh <GIT_USER> <GIT_PROJECT_NAME> <TARGET_EXEC> <DOCKER_CONTAINER_BASE_IMAGE> <TIMEOUT_FOR_BUILD>"
+   echo "example: sh init.sh sloppylopez nodeapi server.js ubuntu:14.04 git 0.12.2 30m"
    exit
 fi
 
@@ -22,7 +22,7 @@ SOURCE_PATH=`dirname $SCRIPT_PATH`
 
 echo "Container to be used: $CONTAINER."
 docker pull $CONTAINER
-#TODO comment this line befre commit
+#TODO comment this line before commit
 rm -rf $GIT_PROJECT_NAME
 #TODO Uncomment me for non-local use
 #apt-get install git && \
@@ -40,6 +40,7 @@ timeout --signal=SIGKILL ${TIMEOUT} \
   docker run -v $SCRIPT_PATH:/source \
   -e "GIT_PROJECT_NAME=$GIT_PROJECT_NAME" \
   -e "NODE_VERSION=$NODE_VERSION" \
+  --rm \
   $CONTAINER sh -c "/source/build.sh"
 
 echo "Running $GIT_PROJECT_NAME"
