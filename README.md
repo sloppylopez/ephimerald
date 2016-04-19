@@ -1,4 +1,4 @@
-# EPHIMERAL
+# EPHIMERALD
 
 ## What for?
 With Ephimeral you can run every project you want Git/Bitbucked, on any Os you
